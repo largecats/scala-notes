@@ -1,12 +1,12 @@
-import main.scala.{AirToAirStrike, AirToAirStrikeFlightSchool, AirToAirStrikeMission, AirToAirStrikePilot, AirToGroundStrike, CarryCargo, CarryPassenger, FlightSchool, GenericMission, GenericPilot, MilitaryMission, MilitaryPilot}
+import main.scala.{AirToAirStrikeTask, AirToAirStrikeFlightSchool, AirToAirStrikeMission, AirToAirStrikePilot, AirToGroundStrikeTask, CarryCargoTask, CarryPassengerTask, FlightSchool, GenericMission, GenericPilot, MilitaryMission, MilitaryPilot}
 
 object Main extends App {
-  val commercialFlight = new CarryPassenger("commercial flight")
-  val cargoFlight = new CarryCargo("cargo flight")
+  val commercialFlight = new CarryPassengerTask("commercial flight")
+  val cargoFlight = new CarryCargoTask("cargo flight")
 
-  val dropBomb = new AirToGroundStrike("drop bomb")
-  val fireMissile = new AirToAirStrike("fire missile")
-  val dogFight = new AirToAirStrike("dog fight")
+  val dropBomb = new AirToGroundStrikeTask("drop bomb")
+  val fireMissile = new AirToAirStrikeTask("fire missile")
+  val dogFight = new AirToAirStrikeTask("dog fight")
 
   val convoyMission = new GenericMission(List(cargoFlight, fireMissile))
   val militaryMission = new MilitaryMission(List(fireMissile, dropBomb))

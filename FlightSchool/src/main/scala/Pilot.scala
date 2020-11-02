@@ -16,7 +16,7 @@ class MilitaryPilot(val name: String) extends Pilot[MilitaryTask] {
   override def perform(mission: Mission[MilitaryTask]): String = s"${name} performed a ${mission.name}"
 }
 
-class AirToAirStrikePilot(val name: String) extends Pilot[AirToAirStrike] {
+class AirToAirStrikePilot(val name: String) extends Pilot[AirToAirStrikeTask] {
   override val specialization = "Dog fight"
-  def perform(mission: Mission[AirToAirStrike]): String = s"${name} performed a ${mission.name}"
+  def perform(mission: Mission[AirToAirStrikeTask]): String = s"${name} performed a ${mission.name}"
 }

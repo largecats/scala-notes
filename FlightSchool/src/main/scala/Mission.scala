@@ -13,6 +13,6 @@ case class MilitaryMission(tasks: List[MilitaryTask]) extends Mission[MilitaryTa
   def name: String = s"Military mission involving ${tasks.map(_.name)}"
 }
 
-case class AirToAirStrikeMission(tasks: List[AirToAirStrike]) extends Mission[AirToAirStrike] {
+case class AirToAirStrikeMission(tasks: List[AirToAirStrikeTask]) extends Mission[AirToAirStrikeTask] {
   def name: String = s"AirToAirStrike mission involving ${tasks.map(_.name)}"
 }

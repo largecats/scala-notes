@@ -11,4 +11,4 @@ case class GenericFlightSchool(course: List[Mission[Task]], pilot: Pilot[Task]) 
 case class MilitaryFlightSchool(course: List[Mission[MilitaryTask]], pilot: Pilot[MilitaryTask]) extends FlightSchool[MilitaryTask]
 case class CivilianFlightSchool(course: List[Mission[CivilianTask]], pilot: Pilot[CivilianTask]) extends FlightSchool[CivilianTask]
 
-case class AirToAirStrikeFlightSchool(course: List[Mission[AirToAirStrike]], pilot: Pilot[AirToAirStrike]) extends FlightSchool[AirToAirStrike]
+case class AirToAirStrikeFlightSchool(course: List[Mission[AirToAirStrikeTask]], pilot: Pilot[AirToAirStrikeTask]) extends FlightSchool[AirToAirStrikeTask]
