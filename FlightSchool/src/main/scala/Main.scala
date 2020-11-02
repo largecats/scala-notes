@@ -1,4 +1,4 @@
-import main.scala.{AirToAirStrike, AirToAirStrikeMission, AirToAirStrikePilot, AirToGroundStrike, CarryCargo, CarryPassenger, GenericMission, GenericPilot, MilitaryMission, MilitaryPilot}
+import main.scala.{AirToAirStrike, AirToAirStrikeFlightSchool, AirToAirStrikeMission, AirToAirStrikePilot, AirToGroundStrike, CarryCargo, CarryPassenger, FlightSchool, GenericMission, GenericPilot, MilitaryMission, MilitaryPilot}
 
 object Main extends App {
   val commercialFlight = new CarryPassenger("commercial flight")
@@ -15,6 +15,8 @@ object Main extends App {
   val maverick = new AirToAirStrikePilot("Maverick")
   val tony = new MilitaryPilot("Tony")
   val steve = new GenericPilot("Steve")
+
+  val TopGun = new AirToAirStrikeFlightSchool(List(airToAirStrikeMission), maverick)
 
   println(maverick.perform(airToAirStrikeMission))
   println(tony.perform(militaryMission))
