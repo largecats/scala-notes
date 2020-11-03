@@ -25,10 +25,3 @@ case class FighterPilot(val name: String) extends Pilot[FighterAircraft] {
     println(s"${name}: I fly ${aircraft.name}")
   }
 }
-
-object Flight {
-
-  def start_flight(pilot: Pilot[Aircraft], aircraft: Aircraft): Unit = {
-    pilot.fly(aircraft)
-  }
-}
