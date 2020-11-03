@@ -9,5 +9,5 @@ object Main extends App {
   val henry = MilitaryPilot("Henry")
   val rose = FighterPilot("Rose")
 
-  
+
 }
