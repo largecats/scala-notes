@@ -6,14 +6,14 @@ object MissionAssignment {
     pilot
   }
 
-  def recommend_best_fighter_pilot(aircraft: Aircraft): Pilot[FighterAircraft] = {
+  def recommend_best_fighter_pilot(aircraft: FighterAircraft): Pilot[FighterAircraft] = {
     val pilot = new FighterPilot
     println(s"Mission requires a pilot who can fly the ${aircraft.getClass.getSimpleName} ${aircraft.name}")
     println(s"Selected a ${pilot.getClass.getSimpleName}")
     pilot
   }
 
-  def recommend_best_combat_pilot(aircraft: Aircraft): Pilot[CombatAircraft] = {
+  def recommend_best_combat_pilot(aircraft: CombatAircraft): Pilot[CombatAircraft] = {
     val pilot = new CombatPilot
     println(s"Mission requires a pilot who can fly the ${aircraft.getClass.getSimpleName} ${aircraft.name}")
     println(s"Selected a ${pilot.getClass.getSimpleName}")
