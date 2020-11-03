@@ -3,20 +3,39 @@ package main.scala
 trait Pilot[-A] {
   def name: String
   def specialization: String
-  def perform(mission: Mission[A]): String
+}
+
+object Pilot {
+  def perform_generic(pilot: Pilot[Task],
+                      mission: Mission[Task]): GenericRecord = {
+    println(s"${pilot.name}: I performed a ${mission.name}")
+    GenericRecord(pilot.name, mission)
+  }
+
+  def perform_military(pilot: Pilot[MilitaryTask],
+                       mission: Mission[MilitaryTask]): MilitaryRecord = {
+    println(s"${pilot.name}: I performed a ${mission.name}")
+    MilitaryRecord(pilot.name, mission)
+  }
+
+  def perform_air_to_air_strike(
+    pilot: Pilot[AirToAirStrikeTask],
+    mission: Mission[AirToAirStrikeTask]
+  ): AirToAirStrikeRecord = {
+    println(s"${pilot.name}: I performed a ${mission.name}")
+    AirToAirStrikeRecord(pilot.name, mission)
+  }
+
 }
 
 class GenericPilot(val name: String) extends Pilot[Task] {
   val specialization = "All task"
-  override def perform(mission: Mission[Task]): String = s"${name} performed a ${mission.name}"
 }
 
 class MilitaryPilot(val name: String) extends Pilot[MilitaryTask] {
   val specialization = "Military task"
-  override def perform(mission: Mission[MilitaryTask]): String = s"${name} performed a ${mission.name}"
 }
 
 class AirToAirStrikePilot(val name: String) extends Pilot[AirToAirStrikeTask] {
   override val specialization = "Dog fight"
-  def perform(mission: Mission[AirToAirStrikeTask]): String = s"${name} performed a ${mission.name}"
 }

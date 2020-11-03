@@ -1,4 +1,4 @@
-import main.scala.{AirToAirStrikeTask, AirToAirStrikeFlightSchool, AirToAirStrikeMission, AirToAirStrikePilot, AirToGroundStrikeTask, CarryCargoTask, CarryPassengerTask, FlightSchool, GenericMission, GenericPilot, MilitaryMission, MilitaryPilot}
+import main.scala._
 
 object Main extends App {
   val commercialFlight = new CarryPassengerTask("commercial flight")
@@ -10,18 +10,23 @@ object Main extends App {
 
   val convoyMission = new GenericMission(List(cargoFlight, fireMissile))
   val militaryMission = new MilitaryMission(List(fireMissile, dropBomb))
-  val airToAirStrikeMission = new AirToAirStrikeMission(List(fireMissile, dogFight))
+  val airToAirStrikeMission = new AirToAirStrikeMission(
+    List(fireMissile, dogFight)
+  )
 
   val maverick = new AirToAirStrikePilot("Maverick")
   val tony = new MilitaryPilot("Tony")
   val steve = new GenericPilot("Steve")
 
-  val TopGun = new AirToAirStrikeFlightSchool(List(airToAirStrikeMission), maverick)
+  val TopGun =
+    new AirToAirStrikeFlightSchool(List(airToAirStrikeMission), maverick)
 
-  println(maverick.perform(airToAirStrikeMission))
-  println(tony.perform(militaryMission))
+  Pilot.perform_air_to_air_strike(maverick, airToAirStrikeMission)
 
-  println(steve.perform(convoyMission))
-  println(steve.perform(militaryMission))
-  println(steve.perform(airToAirStrikeMission))
+  Pilot.perform_military(tony, militaryMission)
+  Pilot.perform_air_to_air_strike(tony, airToAirStrikeMission)
+
+  Pilot.perform_generic(steve, convoyMission)
+  Pilot.perform_military(steve, militaryMission)
+  Pilot.perform_air_to_air_strike(steve, airToAirStrikeMission)
 }
