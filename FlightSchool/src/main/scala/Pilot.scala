@@ -5,6 +5,18 @@ trait Pilot[-A] {
   def specialization: String
 }
 
+class GenericPilot(val name: String) extends Pilot[Task] {
+  val specialization = "All task"
+}
+
+class MilitaryPilot(val name: String) extends Pilot[MilitaryTask] {
+  val specialization = "Military task"
+}
+
+class AirToAirStrikePilot(val name: String) extends Pilot[AirToAirStrikeTask] {
+  override val specialization = "Dog fight"
+}
+
 object Pilot {
   def perform_generic(pilot: Pilot[Task],
                       mission: Mission[Task]): GenericRecord = {
@@ -26,16 +38,4 @@ object Pilot {
     AirToAirStrikeRecord(pilot.name, mission)
   }
 
-}
-
-class GenericPilot(val name: String) extends Pilot[Task] {
-  val specialization = "All task"
-}
-
-class MilitaryPilot(val name: String) extends Pilot[MilitaryTask] {
-  val specialization = "Military task"
-}
-
-class AirToAirStrikePilot(val name: String) extends Pilot[AirToAirStrikeTask] {
-  override val specialization = "Dog fight"
 }
