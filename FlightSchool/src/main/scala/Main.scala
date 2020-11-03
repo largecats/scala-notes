@@ -1,7 +1,7 @@
 package main.scala
 
 object Main extends App {
-  val boeing737 = new CivilianAircraft("Boeing 737")
+  val boeing737 = new PassengerAircraft("Boeing 737")
   val u2 = new MilitaryAircraft("Lockheed U-2")
   val f22 = new FighterAircraft("Lockheed Martin F-22 Raptor")
 
@@ -9,12 +9,12 @@ object Main extends App {
   val henry = MilitaryPilot("Henry")
   val rose = FighterPilot("Rose")
 
-  rose.fly(f22)
+  Pilot.fly_fighter(rose, f22)
 
-  henry.fly(u2)
-  henry.fly(f22)
+  Pilot.fly_military(henry, u2)
+  Pilot.fly_fighter(henry, f22)
 
-  tom.fly(boeing737)
-  tom.fly(u2)
-  tom.fly(f22)
+  Pilot.fly_civilian(tom, boeing737)
+  Pilot.fly_military(tom, u2)
+  Pilot.fly_fighter(tom, f22)
 }
