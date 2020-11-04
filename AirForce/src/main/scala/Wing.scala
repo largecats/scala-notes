@@ -1,6 +1,6 @@
 package main.scala
 
-trait Wing[+A] {
+trait Wing[+A] { // covariant in A
   val aircrafts: List[A] // immutable, so safe to be covariant in A
 }
 

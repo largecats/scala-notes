@@ -1,6 +1,6 @@
 package main.scala
 
-trait Pilot[-A] { // Pilot is contravariant in type parameter A
+trait Pilot[-A] { // contravariant in A
   def fly(aircraft: A): Unit
 }
 

@@ -1,6 +1,6 @@
 package main.scala
 
-trait Mission[+A] { // Mission is covariant in type parameter A
+trait Mission[+A] {
   val name: String
   val aircraft: A
   def test[B>:A](pilot: Pilot[B]): Unit = {
