@@ -38,7 +38,7 @@ object Main extends App {
 //  val reconnaissanceAircraft: ReconnaissanceAircraft = reconnaissanceDuty.aircraftOnPatrolDuty // the u-2 would become f22
 
   // function covariant in parameter type, contravariant in return type
-  println("Function convariant in parameter type, contravariant in return type examples: ")
+  println("Function covariant in parameter type, contravariant in return type examples: ")
   val missionFighterAircraft = f22
   val selectedFighterPilot = MissionAssignment.assign(missionFighterAircraft, MissionAssignment.recommend_best_fighter_pilot)
   Pilot.fly_fighter(selectedFighterPilot, missionFighterAircraft)
