@@ -8,12 +8,12 @@ object Main extends App {
 
   // covariance
   println("Covariance examples: ")
-  val alpha = GenericSquadron("alpha", List(c130, c130, u2, b2, b2, f22))
-  val bravo = CombatSquadron("bravo", List(b2, b2, f22, f22))
-  val charlie = FighterSquadron("charlie", List(f22, f22, f22))
-  Squadron.print_squadron_profile(alpha) // if Squadron were not covariant, bravo and charlie won't compile
-  Squadron.print_squadron_profile(bravo)
-  Squadron.print_squadron_profile(charlie)
+  val alpha = GenericWing("alpha", List(c130, c130, u2, b2, b2, f22))
+  val bravo = CombatWing("bravo", List(b2, b2, f22, f22))
+  val charlie = FighterWing("charlie", List(f22, f22, f22))
+  Wing.print_wing_profile(alpha) // if Wing were not covariant, bravo and charlie won't compile
+  Wing.print_wing_profile(bravo)
+  Wing.print_wing_profile(charlie)
 
   // contravariance
   println("Contravariance examples: ")
