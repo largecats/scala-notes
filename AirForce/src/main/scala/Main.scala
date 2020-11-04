@@ -31,11 +31,11 @@ object Main extends App {
   Pilot.fly_fighter(tom, f22)
 
   // invariance
-  // if Shift were to be covariant in A, the following illegal operation would be possible:
+  // if PatrolDuty were to be covariant in A, the following illegal operation would be possible:
 //  val reconnaissanceDuty: PatrolDuty[ReconnaissanceAircraft] = new PatrolDuty[ReconnaissanceAircraft](u2)
 //  val genericDuty: PatrolDuty[Aircraft] = reconnaissanceDuty
 //  genericDuty.aircraftOnPatrolDuty = f22
-//  val reconnaissanceAircraft: ReconnaissanceAircraft = reconnaissanceDuty.aircraftOnPatrolDuty // the u-2 would become f22
+//  val reconnaissanceAircraft: ReconnaissanceAircraft = reconnaissanceDuty.aircraftOnPatrolDuty // the u-2 would become f22, which has severe implications in terms of international relations
 
   // function covariant in parameter type, contravariant in return type
   println("Function covariant in parameter type, contravariant in return type examples: ")
