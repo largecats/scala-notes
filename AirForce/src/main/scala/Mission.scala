@@ -53,15 +53,18 @@ object Mission {
   def select_pilot[A<:FighterAircraft](aircraft: Aircraft)(implicit pilots: List[Pilot[A]]): Pilot[A] = {
     var shortListedPilots = pilots
     aircraft match {
-      case f: FighterAircraft => shortListedPilots = pilots.collect { case p: Pilot[FighterAircraft] => p }
-      case c: CombatAircraft => shortListedPilots = pilots.collect { case p: Pilot[CombatAircraft] => p }
-      case a: Aircraft => shortListedPilots = pilots.collect { case p: Pilot[Aircraft] => p }
+      case FighterAircraft => shortListedPilots = pilots.collect { case p: Pilot[FighterAircraft] => p }
+      case CombatAircraft => shortListedPilots = pilots.collect { case p: Pilot[CombatAircraft] => p }
+      case Aircraft => shortListedPilots = pilots.collect { case p: Pilot[Aircraft] => p }
     }
+    shortListedPilots.foreach(Pilot.print_pilot_profile(_))
     val pilot = select_most_capable_pilot(shortListedPilots)
     print(s"Selected ")
     Pilot.print_pilot_profile(pilot)
     pilot
   }
+
+//  def short_list_pilots
 
   def select_most_capable_pilot[A](pilots: List[Pilot[A]]): Pilot[A] = {
     var candidate = pilots(0)

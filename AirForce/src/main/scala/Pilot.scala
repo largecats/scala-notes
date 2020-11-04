@@ -2,7 +2,6 @@ package main.scala
 
 trait Pilot[-A] {
   val name: String
-  val capability: Int
   def fly(aircraft: A): Unit
 }
 

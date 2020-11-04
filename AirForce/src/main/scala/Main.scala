@@ -53,6 +53,6 @@ object Main extends App {
   var selectedGenericPilot = Mission.assign(mission.aircraft, Mission.select_generic_pilot)
   mission.test(selectedGenericPilot)
   var selectedPilot = Mission.assign(mission.aircraft, Mission.select_pilot)
-  mission.test(selectedPilot)
+//  mission.test(selectedPilot)
 
 }
