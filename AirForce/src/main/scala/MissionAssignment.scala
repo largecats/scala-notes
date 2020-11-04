@@ -2,27 +2,26 @@ package main.scala
 
 object MissionAssignment {
   def assign[A, B](aircraft: A, recommend: A => Pilot[B]): Pilot[B] = {
-    val pilot = recommend(aircraft)
-    pilot
+    recommend(aircraft)
   }
 
-  def recommend_best_fighter_pilot(aircraft: FighterAircraft): Pilot[FighterAircraft] = {
+  def select_fighter_pilot(aircraft: FighterAircraft): Pilot[FighterAircraft] = {
+    println(s"Mission requires a pilot who can fly the ${aircraft.getClass.getSimpleName} ${aircraft.name}")
     val pilot = new FighterPilot
-    println(s"Mission requires a pilot who can fly the ${aircraft.getClass.getSimpleName} ${aircraft.name}")
     println(s"Selected a ${pilot.getClass.getSimpleName}")
     pilot
   }
 
-  def recommend_best_combat_pilot(aircraft: CombatAircraft): Pilot[CombatAircraft] = {
+  def select_combat_pilot(aircraft: CombatAircraft): Pilot[CombatAircraft] = {
+    println(s"Mission requires a pilot who can fly the ${aircraft.getClass.getSimpleName} ${aircraft.name}")
     val pilot = new CombatPilot
-    println(s"Mission requires a pilot who can fly the ${aircraft.getClass.getSimpleName} ${aircraft.name}")
     println(s"Selected a ${pilot.getClass.getSimpleName}")
     pilot
   }
 
-  def recommend_best_generic_pilot(aircraft: Aircraft): Pilot[Aircraft] = { // accept the most generic type, return the most specific type
-    val pilot = new GenericPilot
+  def select_generic_pilot(aircraft: Aircraft): Pilot[Aircraft] = { // accept the most generic type, return the most specific type
     println(s"Mission requires a pilot who can fly the ${aircraft.getClass.getSimpleName} ${aircraft.name}")
+    val pilot = new GenericPilot
     println(s"Selected a ${pilot.getClass.getSimpleName}")
     pilot
   }

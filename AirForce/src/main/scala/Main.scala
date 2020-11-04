@@ -40,11 +40,11 @@ object Main extends App {
   // function covariant in parameter type, contravariant in return type
   println("Function covariant in parameter type, contravariant in return type examples: ")
   val missionFighterAircraft = f22
-  val selectedFighterPilot = MissionAssignment.assign(missionFighterAircraft, MissionAssignment.recommend_best_fighter_pilot)
+  val selectedFighterPilot = MissionAssignment.assign(missionFighterAircraft, MissionAssignment.select_fighter_pilot)
   Pilot.fly_fighter(selectedFighterPilot, missionFighterAircraft)
-  val selectedCombatPilot = MissionAssignment.assign(missionFighterAircraft, MissionAssignment.recommend_best_combat_pilot)
+  val selectedCombatPilot = MissionAssignment.assign(missionFighterAircraft, MissionAssignment.select_combat_pilot)
   Pilot.fly_fighter(selectedCombatPilot, missionFighterAircraft)
-  var selectedGenericPilot = MissionAssignment.assign(missionFighterAircraft, MissionAssignment.recommend_best_generic_pilot)
+  var selectedGenericPilot = MissionAssignment.assign(missionFighterAircraft, MissionAssignment.select_generic_pilot)
   Pilot.fly_fighter(selectedGenericPilot, missionFighterAircraft)
 
 }
