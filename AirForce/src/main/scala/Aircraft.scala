@@ -1,7 +1,7 @@
 package main.scala
 
 trait Aircraft {
-  def name: String
+  val name: String
 }
 
 class CombatAircraft(val name: String) extends Aircraft
