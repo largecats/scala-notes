@@ -1,33 +1,28 @@
 package main.scala
 
-trait Pilot[-A] {
-  val name: String
+trait Pilot[-A] { // Pilot is contravariant in type parameter A
   def fly(aircraft: A): Unit
 }
 
-class GenericPilot(val name: String, val capability: Int) extends Pilot[Aircraft] {
+class GenericPilot extends Pilot[Aircraft] {
   def fly(aircraft: Aircraft): Unit = {
-    println(s"${this.name}: I'm a ${this.getClass.getSimpleName}, and I'm flying a ${aircraft.name} ${aircraft.getClass.getSimpleName}")
+    println(s"I'm a ${this.getClass.getSimpleName}, and I'm flying a ${aircraft.name} ${aircraft.getClass.getSimpleName}")
   }
 }
 
-class CombatPilot(val name: String, val capability: Int) extends Pilot[CombatAircraft] {
+class CombatPilot extends Pilot[CombatAircraft] {
   def fly(aircraft: CombatAircraft): Unit = {
-    println(s"${this.name}: I'm a ${this.getClass.getSimpleName}, and I'm flying a ${aircraft.name} ${aircraft.getClass.getSimpleName}")
+    println(s"I'm a ${this.getClass.getSimpleName}, and I'm flying a ${aircraft.name} ${aircraft.getClass.getSimpleName}")
   }
 }
 
-class FighterPilot(val name: String, val capability: Int) extends Pilot[FighterAircraft] {
+class FighterPilot extends Pilot[FighterAircraft] {
   def fly(aircraft: FighterAircraft): Unit = {
-    println(s"${this.name}: I'm a ${this.getClass.getSimpleName}, and I'm flying a ${aircraft.name} ${aircraft.getClass.getSimpleName}")
+    println(s"I'm a ${this.getClass.getSimpleName}, and I'm flying a ${aircraft.name} ${aircraft.getClass.getSimpleName}")
   }
 }
 
 object Pilot {
-  def print_pilot_profile[A](pilot: Pilot[A]): Unit = {
-    println(s"${pilot.name}: ${pilot.getClass.getSimpleName} with capability ${pilot.capability}")
-  }
-
   def fly_generic(pilot: Pilot[Aircraft], aircraft: Aircraft): Unit = {
     pilot.fly(aircraft)
   }
