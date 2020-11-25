@@ -11,4 +11,4 @@ class FighterAircraft(override val name: String) extends CombatAircraft(name)
 class BomberAircraft(override val name: String) extends CombatAircraft(name)
 
 class CargoAircraft(override val name: String) extends NonCombatAircraft(name)
-class ReconnaissanceAircraft(override val name: String)  extends NonCombatAircraft(name)
+class SpyAircraft(override val name: String)  extends NonCombatAircraft(name)

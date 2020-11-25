@@ -2,7 +2,7 @@ package main.scala
 
 object ContravarianceExample extends App {
   // aircrafts
-  val u2 = new ReconnaissanceAircraft("Lockheed U-2")
+  val u2 = new SpyAircraft("Lockheed U-2")
   val b2 = new BomberAircraft("Northrop Grumman B-2 Spirit")
   val f22 = new FighterAircraft("Lockheed Martin F-22 Raptor")
 
