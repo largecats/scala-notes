@@ -16,7 +16,7 @@ object CovarianceExample extends App {
   def print_formation_profile(formation: Formation[Aircraft]): Unit = {
     println(s"A ${formation.getClass.getSimpleName}\nleader: ${formation.leader.name}\nwingman: ${formation.wingman.name}\n")
   }
-  print_formation_profile(genericFormation) // if Formation were not covariant, bravo and charlie won't compile
-  print_formation_profile(combatFormation)
+  print_formation_profile(genericFormation)
+  print_formation_profile(combatFormation) // if Formation were not covariant, combatFormation and fighterFormation won't compile
   print_formation_profile(fighterFormation)
 }
