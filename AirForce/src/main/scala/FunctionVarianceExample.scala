@@ -9,10 +9,10 @@ object FunctionVarianceExample extends App {
   Mission.print_mission_briefing(mission)
 
   // function covariant in parameter type, contravariant in return type
-  //  val trainedFighterPilot = Mission.assign(mission.aircraft, Mission.train_fighter_pilot) // tran_fighter_pilot: FighterAircraft => Pilot[FighterAircraft]
-  //  mission.test(trainedFighterPilot) // type error
-  val trainedCombatPilot = Mission.assign(mission.aircraft, Mission.train_combat_pilot) // train_combat_pilot: CombatAircraft => Pilot[CombatAircraft]
-  mission.test(trainedCombatPilot)
-  var trainedGenericPilot = Mission.assign(mission.aircraft, Mission.train_generic_pilot) // train_generic_pilot: Aircraft => Pilot[Aircraft]
-  mission.test(trainedGenericPilot)
+  //  val selectedFighterPilot = Mission.assign(mission.aircraft, Mission.select_fighter_pilot) // tran_fighter_pilot: FighterAircraft => Pilot[FighterAircraft]
+  //  mission.test(selectedFighterPilot) // type error
+  val selectedCombatPilot = Mission.assign(mission.aircraft, Mission.select_combat_pilot) // select_combat_pilot: CombatAircraft => Pilot[CombatAircraft]
+  mission.test(selectedCombatPilot)
+  var selectedGenericPilot = Mission.assign(mission.aircraft, Mission.select_generic_pilot) // select_generic_pilot: Aircraft => Pilot[Aircraft]
+  mission.test(selectedGenericPilot)
 }
