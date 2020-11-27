@@ -7,13 +7,16 @@ object CovarianceExample extends App {
   val b2 = new BomberAircraft("Northrop Grumman B-2 Spirit")
   val f22 = new FighterAircraft("Lockheed Martin F-22 Raptor")
 
-  // wings
-  val alpha = GenericWing(List(c130, c130, u2, b2, b2, f22))
-  val bravo = CombatWing(List(b2, b2, f22, f22))
-  val charlie = FighterWing(List(f22, f22, f22))
+  // formations
+  val genericFormation = GenericFormation(leader=c130, wingman=f22)
+  val combatFormation = CombatFormation(leader=b2, wingman=f22)
+  val fighterFormation = FighterFormation(leader=f22, wingman=f22)
 
-  // printing wing profiles
-  Wing.print_wing_profile(alpha) // if Wing were not covariant, bravo and charlie won't compile
-  Wing.print_wing_profile(bravo)
-  Wing.print_wing_profile(charlie)
+  // print formation profiles
+  def print_formation_profile(formation: Formation[Aircraft]): Unit = {
+    println(s"A ${formation.getClass.getSimpleName}\nleader: ${formation.leader.name}\nwingman: ${formation.wingman.name}\n")
+  }
+  print_formation_profile(genericFormation) // if Formation were not covariant, bravo and charlie won't compile
+  print_formation_profile(combatFormation)
+  print_formation_profile(fighterFormation)
 }
