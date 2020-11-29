@@ -22,16 +22,16 @@ class FighterPilot() extends Pilot[FighterAircraft] {
   }
 }
 
-object Pilot {
-  def fly_generic(pilot: Pilot[Aircraft], aircraft: Aircraft): Unit = {
-    pilot.fly(aircraft)
-  }
-
-  def fly_combat(pilot: Pilot[CombatAircraft], aircraft: CombatAircraft): Unit = {
-    pilot.fly(aircraft)
-  }
-
-  def fly_fighter(pilot: Pilot[FighterAircraft], aircraft: FighterAircraft): Unit = {
-    pilot.fly(aircraft)
-  }
-}
+//object Pilot {
+//  def fly_generic(pilot: Pilot[Aircraft], aircraft: Aircraft): Unit = {
+//    pilot.fly(aircraft)
+//  }
+//
+//  def fly_combat(pilot: Pilot[CombatAircraft], aircraft: CombatAircraft): Unit = {
+//    pilot.fly(aircraft)
+//  }
+//
+//  def fly_fighter(pilot: Pilot[FighterAircraft], aircraft: FighterAircraft): Unit = {
+//    pilot.fly(aircraft)
+//  }
+//}

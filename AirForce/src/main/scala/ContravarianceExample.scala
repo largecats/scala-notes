@@ -11,13 +11,18 @@ object ContravarianceExample extends App {
   val combatPilot = new CombatPilot()
   val fighterPilot = new FighterPilot()
 
+  // fly methods
+  def fly_generic(pilot: Pilot[Aircraft], aircraft: Aircraft): Unit = pilot.fly(aircraft)
+  def fly_combat(pilot: Pilot[CombatAircraft], aircraft: CombatAircraft): Unit = pilot.fly(aircraft)
+  def fly_fighter(pilot: Pilot[FighterAircraft], aircraft: FighterAircraft): Unit = pilot.fly(aircraft)
+
   // flying!
-  Pilot.fly_fighter(fighterPilot, f22)
+  fly_fighter(fighterPilot, f22)
 
-  Pilot.fly_combat(combatPilot, b2)
-  Pilot.fly_fighter(combatPilot, f22)
+  fly_combat(combatPilot, b2)
+  fly_fighter(combatPilot, f22)
 
-  Pilot.fly_generic(genericPilot, u2)
-  Pilot.fly_combat(genericPilot, b2)
-  Pilot.fly_fighter(genericPilot, f22)
+  fly_generic(genericPilot, u2)
+  fly_combat(genericPilot, b2)
+  fly_fighter(genericPilot, f22)
 }
