@@ -31,19 +31,19 @@ object Mission {
 
   def select_fighter_pilot[A<:FighterAircraft](aircraft: FighterAircraft): Pilot[FighterAircraft] = {
     val pilot = new FighterPilot
-    println(s"Trained a ${pilot.getClass.getSimpleName}")
+    println(s"Selected a ${pilot.getClass.getSimpleName}")
     pilot
   }
 
   def select_combat_pilot[A<:FighterAircraft](aircraft: CombatAircraft): Pilot[CombatAircraft] = {
     val pilot = new CombatPilot
-    println(s"Trained a ${pilot.getClass.getSimpleName}")
+    println(s"Selected a ${pilot.getClass.getSimpleName}")
     pilot
   }
 
   def select_generic_pilot[A<:FighterAircraft](aircraft: Aircraft): Pilot[Aircraft] = { // accept the most generic type, return the most specific type
     val pilot = new GenericPilot
-    println(s"Trained a ${pilot.getClass.getSimpleName}")
+    println(s"Selected a ${pilot.getClass.getSimpleName}")
     pilot
   }
 
