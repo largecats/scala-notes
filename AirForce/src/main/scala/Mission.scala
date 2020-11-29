@@ -6,7 +6,8 @@ trait Mission[+A] {
   def test[B>:A](pilot: Pilot[B]): Unit = {
     try {
       pilot.fly(aircraft)
-      println("Pilot able to perform mission")
+      println("")
+//      println("Pilot able to perform mission")
     } catch {
       case _: Throwable => println("Pilot not able to perform mission")
     }
@@ -22,7 +23,7 @@ case class FighterMission(val name: String, val aircraft: FighterAircraft) exten
 
 object Mission {
   def print_mission_briefing(mission: Mission[Aircraft]): Unit = {
-    println(s"Mission ${mission.name} requires a pilot who can fly the ${mission.aircraft.name} ${mission.aircraft.getClass.getSimpleName}")
+    println(s"Mission ${mission.name} requires a pilot who can fly the ${mission.aircraft.name} ${mission.aircraft.getClass.getSimpleName}\n")
   }
 
   def assign[A, B](aircraft: A, select_pilot: A => Pilot[B]): Pilot[B] = {
