@@ -14,11 +14,11 @@ trait Mission[+A] {
   }
 }
 
-case class GenericMission(val name: String, val aircraft: Aircraft) extends Mission[Aircraft]
+class GenericMission(val name: String, val aircraft: Aircraft) extends Mission[Aircraft]
 
-case class CombatMission(val name: String, val aircraft: CombatAircraft) extends Mission[CombatAircraft]
+class CombatMission(val name: String, val aircraft: CombatAircraft) extends Mission[CombatAircraft]
 
-case class FighterMission(val name: String, val aircraft: FighterAircraft) extends Mission[FighterAircraft]
+class FighterMission(val name: String, val aircraft: FighterAircraft) extends Mission[FighterAircraft]
 
 
 object Mission {

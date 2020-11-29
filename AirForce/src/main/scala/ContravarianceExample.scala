@@ -7,9 +7,9 @@ object ContravarianceExample extends App {
   val f22 = new FighterAircraft("Lockheed Martin F-22 Raptor")
 
   // pilots
-  val genericPilot = new GenericPilot
-  val combatPilot = new CombatPilot
-  val fighterPilot = new FighterPilot
+  val genericPilot = new GenericPilot()
+  val combatPilot = new CombatPilot()
+  val fighterPilot = new FighterPilot()
 
   // flying!
   Pilot.fly_fighter(fighterPilot, f22)

@@ -5,7 +5,7 @@ object FunctionVarianceExample extends App {
   val b2 = new BomberAircraft("Northrop Grumman B-2 Spirit")
 
   // mission
-  val mission = CombatMission(name = "Operation Sunset", aircraft = b2)
+  val mission = new CombatMission(name = "Operation Sunset", aircraft = b2)
   Mission.print_mission_briefing(mission)
 
   // function covariant in parameter type, contravariant in return type

@@ -8,9 +8,9 @@ object CovarianceExample extends App {
   val f22 = new FighterAircraft("Lockheed Martin F-22 Raptor")
 
   // formations
-  val genericFormation = GenericFormation(leader=c130, wingman=f22)
-  val combatFormation = CombatFormation(leader=b2, wingman=f22)
-  val fighterFormation = FighterFormation(leader=f22, wingman=f22)
+  val genericFormation = new GenericFormation(leader=c130, wingman=f22)
+  val combatFormation = new CombatFormation(leader=b2, wingman=f22)
+  val fighterFormation = new FighterFormation(leader=f22, wingman=f22)
 
   // print formation profiles
   def print_formation_profile(formation: Formation[Aircraft]): Unit = {
